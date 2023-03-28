@@ -17,18 +17,15 @@ describe("Token", ()=> {
 	let token, accounts, deployer, receiver, exchange //we use this to access the token variable inside the functions 
 	//This will let the variable scope to be accesible in every function inside here 
 
-	//let accounts
-	//let deployer
-
-
-
 	beforeEach(async()=> {
 	//we use the code if one or multiple line from our code reapeat
 	//code goes in here
-		//fetch token from blockchain
+		//fetch token to deploy
 		const Token = await ethers.getContractFactory('Token')
-		//deply token 
+		//deploy token 
 		 token = await Token.deploy('Dapp University', 'DAPP', '1000000')
+		
+		
 		 accounts = await ethers.getSigners()
 		 deployer = accounts[0]
 		 receiver = accounts[1]
